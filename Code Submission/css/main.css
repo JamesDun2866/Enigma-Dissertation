@@ -1,0 +1,355 @@
+@import url("fonts.css");
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: #0F1215;
+	font: 16px/30px "merriweather-regular", serif;
+	font-weight: normal;
+	margin: 0;
+}
+.row {
+	width: 94%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+textarea {
+	display: block;
+	padding: 18px 20px;
+	border: 0;
+	font-family: "raleway-bold", sans-serif;
+	font-size: 15px;
+	line-height: 24px;
+	border-radius: 3px;
+	max-width: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	resize: none;
+	color: white;
+}
+
+button {
+	display: inline-block;
+	font: 16px/30px "raleway-heavy", sans-serif;
+	padding: 9px 16px;
+	margin: 0 3px 6px 0;
+	background: #FFFFFF;
+	color: #000000;
+	border-radius: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+button:hover
+ {
+	color: #FFFFFF;
+	background: #e64e04;
+}
+
+
+header {
+	width: 100%;
+	position: fixed;
+	transition: all 0.5s ease-in-out;
+
+}
+header.opaque {
+	background: black;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nav-wrap,
+#nav-wrap ul,
+#nav-wrap li,
+#nav-wrap a {
+	margin: 0;
+	padding: 0;
+}
+
+#nav-wrap {
+	font: 13px "raleway-heavy", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+#nav-wrap > a {
+	display: none;
+}
+
+ul#nav li {
+	position: relative;
+	list-style: none;
+	display: inline-block;
+	height: 66px;
+}
+
+
+ul#nav li a {
+	display: block;
+	padding: 14px 12px;
+	line-height: 38px;
+	text-decoration: none;
+	text-align: left;
+	color: #FFFFFF;
+	position: relative;
+	transition: color 0.2s ease-in-out;
+}
+
+ul#nav li a:hover {
+	color: #fdc501;
+}
+
+#services {
+	background: #12151B;
+	padding-top: 120px;
+	padding-bottom: 120px;
+	border-bottom: 1px solid #15191d;
+}
+
+.big {
+  font-size: 1.2em;
+}
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  background-color: #e64e04;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+label
+{
+	font-size: 20px;
+		font: 23px "raleway-heavy", sans-serif;
+		color: white;
+}
+.plugboard
+{
+	text-align: center;
+}
+
+.circle.small {
+	border: 8px solid #e64e04;
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+	text-align:center;
+	margin-left: 240px;
+	margin-right:auto;
+
+}
+
+.smalltext
+{
+	width: 10%;
+	height: 20%;
+}
+.numberbox
+{
+
+		display: block;
+		border: 0;
+		font-family: "raleway-bold", sans-serif;
+		font-size: 15px;
+		line-height: 24px;
+		border-radius: 3px;
+		max-width: 100%;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		resize: none;
+		color: white;
+
+
+}
+
+.kickbox
+{
+
+		display: block;
+		border: 0;
+		font-family: "raleway-bold", sans-serif;
+		font-size: 15px;
+		line-height: 24px;
+		border-radius: 3px;
+		max-width: 100%;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: auto;
+		margin-right: auto;
+
+		resize: none;
+		color: white;
+
+
+}
+
+.label2
+{
+	font-size: 20px;
+		font: 15px "raleway-heavy", sans-serif;
+		color: white;
+
+
+}
+.kick
+{
+	display: inline-block;
+margin-left: 450px;
+
+}
+.Ring
+{
+	display: inline-block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 33%;
+
+}
+.HashingType
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: block;
+	width:80%;
+	align-items: center;
+	border: 0;
+	border-radius: 3px;
+	max-width: 80%;
+	resize: none;
+
+}
+.label3
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: block;
+	width:80%;
+	align-items: center;
+	border: 0;
+	border-radius: 3px;
+	max-width: 80%;
+	resize: none;
+}
+
+.Ringset
+{
+
+	display: block;
+	padding: 18px 20px;
+	border: 0;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	resize: none;
+
+}
+.ROTOR
+{
+	display: block;
+	padding: 18px 20px;
+	border: 0;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	resize: none;
+}
+.circle.small.M3 {
+	border: 8px solid #e64e04;
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+	text-align:center;
+	margin-left: 165px;
+	margin-right:auto;
+
+}
+.Ring.M3
+{
+	display: inline-block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 24%;
+
+}
+.Center
+{
+	display: block;
+	padding: 18px 20px;
+	border: 0;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	resize: none;
+	text-align: center;
+}
+.button2 {
+	display: inline-block;
+	font: 16px/30px "raleway-heavy", sans-serif;
+	padding: 9px 16px;
+	margin: 0 3px 6px 0;
+	background: #FFFFFF;
+	color: #000000;
+	border-radius: 3px;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+}
+
+.button2:hover
+ {
+	color: #FFFFFF;
+	background: #e64e04;
+}

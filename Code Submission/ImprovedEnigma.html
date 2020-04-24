@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dissertation: Enigma</title> <!-- Website Title  -->
+  <link rel="stylesheet" href="css/main.css"> <!-- CSS Link  -->
+  <link rel="stylesheet" href="Keyboard.css"> <!-- Keyboard CSS  -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header id="main-header">
+    <!-- Nav bar -->
+    <div class="row">
+      <nav id="nav-wrap">
+        <ul id="nav" class="nav">
+          <li><a href="index.html">Enigma 1.</a></li> <!-- Enigma  -->
+          <li><a href="fourdial.html">Enigma M3 Kriegsmarine.</a></li> <!-- M3 Enigma  -->
+          <li><a href="ImprovedEnigma.html">Improved Enigma.</a></li> <!-- Improved Enigma  -->
+          <li><a href="Cribbing.html">Cribbing (Bombe Basics).</a></li> <!-- Cribbing -->
+          <li><a href="Morse.html">Morse Code.</a></li><!-- Morse Code -->
+          <li><a href="hashing.html">Hashing.</a></li> <!-- Hashing  -->
+          <li><a href="AES.html">AES 256.</a></li> <!-- AES 256  -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="Center">
+      <label> Encoded Text</label>
+    </div>
+    <textarea readonly id="result"></textarea> <!-- Textbox for results of the Enigma  -->
+    <br>
+    <div class="Center">
+      <button type="button" onclick="reset()" class="button2">Reset</button>
+    </div>
+    <script>
+      function reset() {
+        location.reload();
+      }
+    </script>
+    <div class="ROTOR">
+      <div class="Center">
+        <label> Rotor Settings</label>
+      </div>
+      <div class="circle small">
+        <!-- Create Circle for Rotor  -->
+        <br> <!-- fit the input box to the circle  -->
+        <br>
+        <div class="" <select>
+          <input type="number" class="numberbox" min="1" max="26" id="R3" value="1"> <!-- Dial 3: Default value of 1 with min of 1 and max of 26  -->
+        </div>
+      </div>
+
+      <div class="circle small">
+        <!-- Create Circle for Rotor  -->
+        <br> <!-- fit the input box to the circle  -->
+        <br>
+        <div class="" <select>
+          <input type="number" class="numberbox" min="1" max="26" id="R2" value="1"> <!-- Dial 2: Default value of 1 with min of 1 and max of 26  -->
+        </div>
+      </div>
+
+      <div class="circle small">
+        <!-- Create Circle for Rotor  -->
+        <br> <!-- fit the input box to the circle  -->
+        <br>
+        <div class="" <select>
+          <input type="number" class="numberbox" min="1" max="26" id="R1" value="1"> <!-- Dial 1: Default value of 1 with min of 1 and max of 26  -->
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="Ringset">
+      <div class="Center">
+        <label> Ring Settings</label>
+      </div>
+      <div class="Ring">
+        <span class="custom-dropdown big">
+          <!-- dropdown for ring settings (Rotor 1) default: 1 ranges 1 - 26 -->
+          <label class="label2">Ring Setting (Rotor 1) :</label>
+          <select id="ring1">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="Ring">
+        <span class="custom-dropdown big">
+          <!-- dropdown for ring settings (Rotor 2) default: 1 ranges 1 - 26 -->
+          <label class="label2">Ring Setting (Rotor 2) :</label>
+          <select id="ring2">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="Ring">
+        <span class="custom-dropdown big">
+          <!-- dropdown for ring settings (Rotor 2) default: 1 ranges 1 - 26 -->
+          <label class="label2">Ring Setting (Rotor 3) :</label>
+          <select id="ring3">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+          </select>
+        </span>
+      </div>
+    </div>
+
+    <!-- Below is the dropdowns for each plugboard letter using the Qwertz keyboard layout. each letter has a dropdown of all the other letter but not itself as setting a letter to itself is an invalid combination-->
+    <!-- The First letter is code commented but the rest of the code is near identical so is not -->
+    <!-- START PLUGBOARD -->
+
+
+
+    <div class="plugboard">
+      <br>
+      <br>
+      <div class="Center">
+        <label> Plug Board</label>
+      </div>
+      <span class="custom-dropdown big">
+        <!--Declare dropdown -->
+        <label class="label2">Q :</label> <!-- Display the letter of the plug -->
+        <!-- Each plug has a name of "Plug" as this allows me to iterate round the different plugs later in the code. Each plug also has it's own ID so I can find a specific plug later in the code -->
+        <select id="plugQ" name="Plug">
+          <!-- Plug default is blank or not set-->
+          <option selected></option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>W :</label>
+        <select id="plugW" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>E :</label>
+        <select id="plugE" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>R :</label>
+        <select id="plugR" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>T :</label>
+        <select id="plugT" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>Z :</label>
+        <select id="plugZ" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>U :</label>
+        <select id="plugU" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>I :</label>
+        <select id="plugI" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>O :</label>
+        <select id="plugO" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+    </div>
+    <div class="plugboard">
+      <br>
+      <span class="custom-dropdown big">
+        <label>A :</label>
+        <select id="plugA" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>S :</label>
+        <select id="plugS" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>D :</label>
+        <select id="plugD" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>F :</label>
+        <select id="plugF" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>G :</label>
+        <select id="plugG" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>H :</label>
+        <select id="plugH" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>J :</label>
+        <select id="plugJ" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>K :</label>
+        <select id="plugK" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="plugboard">
+      <br>
+      <span class="custom-dropdown big">
+        <label>P :</label>
+        <select id="plugP" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>Y :</label>
+        <select id="plugY" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>X :</label>
+        <select id="plugX" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>C :</label>
+        <select id="plugC" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>V :</label>
+        <select id="plugV" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>B :</label>
+        <select id="plugB" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>N</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>N :</label>
+        <select id="plugN" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>M :</label>
+        <select id="plugM" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>L</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>L :</label>
+        <select id="plugL" name="Plug">
+          <option selected></option>
+          <option>Q</option>
+          <option>W</option>
+          <option>E</option>
+          <option>R</option>
+          <option>T</option>
+          <option>Z</option>
+          <option>U</option>
+          <option>I</option>
+          <option>O</option>
+          <option>A</option>
+          <option>S</option>
+          <option>D</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>J</option>
+          <option>K</option>
+          <option>P</option>
+          <option>Y</option>
+          <option>X</option>
+          <option>C</option>
+          <option>V</option>
+          <option>B</option>
+          <option>N</option>
+          <option>M</option>
+        </select>
+      </span>
+    </div>
+    <br>
+    <br>
+    <div class="Center">
+      <label> Switch Board</label>
+    </div>
+    <!-- The switchboard is a solution to no letter being able to be typed as itself if a letter is on on the switchboard it will always type as itself but advance the rotors as normal. this could be extended on by adding a bypass -->
+    <!-- The bypass would count how many times the letter types itsef then switch off when it hits the bypass number. then on after an interval of times. however, the switchboard allows the same letter to be typed so works for its purpose -->
+
+    <div class="plugboard">
+
+      <span class="custom-dropdown big">
+        <!-- Declare dropdown -->
+        <label>Q :</label>
+        <select id="SwitchQ" name="Switch">
+          <!-- Switch for letter Q -->
+          <option selected>0</option> <!-- Default off -->
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>W :</label>
+        <select id="SwitchW" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>E :</label>
+        <select id="SwitchE" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>R :</label>
+        <select id="SwitchR" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>T :</label>
+        <select id="SwitchT" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>Z :</label>
+        <select id="SwitchZ" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>U :</label>
+        <select id="SwitchU" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>I :</label>
+        <select id="SwitchI" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>O :</label>
+        <select id="SwitchO" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <br>
+      <br>
+      <span class="custom-dropdown big">
+        <label>A :</label>
+        <select id="SwitchA" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>S :</label>
+        <select id="SwitchS" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>D :</label>
+        <select id="SwitchD" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>F :</label>
+        <select id="SwitchF" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>G :</label>
+        <select id="SwitchG" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>H :</label>
+        <select id="SwitchH" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>J :</label>
+        <select id="SwitchJ" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>K :</label>
+        <select id="SwitchK" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <br>
+      <br>
+      <span class="custom-dropdown big">
+        <label>P :</label>
+        <select id="SwitchP" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>Y :</label>
+        <select id="SwitchY" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>X :</label>
+        <select id="SwitchX" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>C :</label>
+        <select id="SwitchC" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>V :</label>
+        <select id="SwitchV" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>B :</label>
+        <select id="SwitchB" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>N :</label>
+        <select id="SwitchN" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>M :</label>
+        <select id="SwitchM" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+
+      <span class="custom-dropdown big">
+        <label>L :</label>
+        <select id="SwitchL" name="Switch">
+          <option selected>0</option>
+          <option>1</option>
+        </select>
+      </span>
+    </div>
+
+    <!-- START KEYBOARD -->
+    <!-- As with the plugboard a lot of this code repeats so the first letter is commented but the rest are not -->
+    <br>
+    <br>
+    <div class="keyboard">
+      <!-- Create Keyboard DIV-->
+      <div class="keyboard__keys">
+        <!-- Create Keyboard key rows and stlye them -->
+        <button type="button" class="keyboard__key" id="Q" onclick="Q()">Q</button> <!-- Create a button for the key and assign it a letter. once pressed it executes its assigned function (In this case Q)-->
+        <script type="text/javascript">
+          function Q() {
+            letter = document.getElementById("Q").value = "Q"; // When Q is pressed letter is set to a value of Q
+            encryptedletter = Enigma(letter); // Letter is then sent through the Enigma Method anjd encrypted
+            document.getElementById("result").value += encryptedletter; // the encrypted letter is then added to the result box
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="W" onclick="W()">W </button>
+        <script type="text/javascript">
+          function W() {
+            letter = document.getElementById("W").value = "W";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="E" onclick="E()">E</button>
+        <script type="text/javascript">
+          function E() {
+            letter = document.getElementById("E").value = "E";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="R" onclick="R()">R</button>
+        <script type="text/javascript">
+          function R() {
+            letter = document.getElementById("R").value = "R";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="T" onclick="T()">T</button>
+        <script type="text/javascript">
+          function T() {
+            letter = document.getElementById("T").value = "T";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="Z" onclick="Z()">Z</button>
+        <script type="text/javascript">
+          function Z() {
+            letter = document.getElementById("Z").value = "Z";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="U" onclick="U()">U</button>
+        <script type="text/javascript">
+          function U() {
+            letter = document.getElementById("U").value = "U";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="I" onclick="I()">I</button>
+        <script type="text/javascript">
+          function I() {
+            letter = document.getElementById("I").value = "I";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="O" onclick="O()">O</button>
+        <script type="text/javascript">
+          function O() {
+            letter = document.getElementById("O").value = "O";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <br>
+        <button type="button" class="keyboard__key" id="A" onclick="A()">A</button>
+        <script type="text/javascript">
+          function A() {
+            letter = document.getElementById("A").value = "A";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="S" onclick="S()">S</button>
+        <script type="text/javascript">
+          function S() {
+            letter = document.getElementById("S").value = "S";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="D" onclick="D()">D</button>
+        <script type="text/javascript">
+          function D() {
+            letter = document.getElementById("D").value = "D";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="F" onclick="F()">F</button>
+        <script type="text/javascript">
+          function F() {
+            letter = document.getElementById("F").value = "F";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="G" onclick="G()">G</button>
+        <script type="text/javascript">
+          function G() {
+            letter = document.getElementById("G").value = "G";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="H" onclick="H()">H</button>
+        <script type="text/javascript">
+          function H() {
+            letter = document.getElementById("H").value = "H";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="J" onclick="J()">J</button>
+        <script type="text/javascript">
+          function J() {
+            letter = document.getElementById("J").value = "J";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="K" onclick="K()">K</button>
+        <script type="text/javascript">
+          function K() {
+            letter = document.getElementById("K").value = "K";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <br>
+        <button type="button" class="keyboard__key" id="P" onclick="P()">P</button>
+        <script type="text/javascript">
+          function P() {
+            letter = document.getElementById("P").value = "P";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="Y" onclick="Y()">Y</button>
+        <script type="text/javascript">
+          function Y() {
+            letter = document.getElementById("Y").value = "Y";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="X" onclick="X()">X</button>
+        <script type="text/javascript">
+          function X() {
+            letter = document.getElementById("X").value = "X";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="C" onclick="C()">C</button>
+        <script type="text/javascript">
+          function C() {
+            letter = document.getElementById("C").value = "C";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="V" onclick="V()">V</button>
+        <script type="text/javascript">
+          function V() {
+            letter = document.getElementById("V").value = "V";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="B" onclick="B()">B</button>
+        <script type="text/javascript">
+          function B() {
+            letter = document.getElementById("B").value = "B";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="N" onclick="N()">N</button>
+        <script type="text/javascript">
+          function N() {
+            letter = document.getElementById("N").value = "N";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="M" onclick="M()">M</button>
+        <script type="text/javascript">
+          function M() {
+            letter = document.getElementById("M").value = "M";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+        <button type="button" class="keyboard__key" id="L" onclick="L()">L</button>
+        <script type="text/javascript">
+          function L() {
+            letter = document.getElementById("L").value = "L";
+            encryptedletter = Enigma(letter);
+            document.getElementById("result").value += encryptedletter;
+          }
+        </script>
+
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </section>
+
+  <script>
+    // Enigma Rotors are declared here. If you want to change these rotors please refer to the attached website as it has all the historic rotor wirings for all of the enigma permutations.
+    // https://www.cryptomuseum.com/crypto/enigma/wiring.html#
+
+    //The Alphabet, what the rotors compare against
+    Orignal = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    //Rotor 1 the last dail the letter enters
+    Dial1 = ['E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J'];
+    // Rotor 2 the second Dail the letter enters
+    Dial2 = ['A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E'];
+    //Rotor 3 the first Dial the letter enters
+    Dial3 = ['B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O'];
+    // ReflectorB Send the letter through all the Rotors again
+    ReflectorB = ['Y', 'R', 'U', 'H', 'Q', 'S', 'L', 'D', 'P', 'X', 'N', 'G', 'O', 'K', 'M', 'I', 'E', 'B', 'F', 'Z', 'C', 'W', 'V', 'J', 'A', 'T'];
+
+    //Default state of the plug combinations allows for the enigma to work. if plug error is true then the pluboard has been misconfigured
+    plugerror = false;
+    // In the Original enigma only 10 pairs of plugs were permitted to be connected, this varible measures the amount of plugs connected
+    plugcount = 0;
+
+    // START PLUG VALIDATION
+    //This function tests all 26 plugs to ensure if they are set if there is a valid connection to a plug, if there isnt it will return an error and not allow the user to type a letter
+    // As with previous methods this code repeats itself 26 times (Each letter of the Alphabet) and therefore I have commented the first but not all
+    function PlugTest() {
+      if (plugQ.value !== "") { // if plug is set (not empty)
+        plugmatch = "plug" + plugQ.value; //create a varible that can be used to locate the opposing plug using the plugs unique ID as mentioned above
+        for (i = 0; i < 26; i++) { //loop around all 26 letters of the Alphabet
+          var x = document.getElementsByName('Plug')[i]; //set x to each plug in the alphabet (used to find the connected plug)
+          if (x.id === plugmatch) { //if the plug in the iteration has the unique ID set above do the following statements
+            if (x.value !== "Q") { //if the opposing plug does not have the letter of the current plug its an invalid connection
+              plugerror = true; // return an error
+              break; //break the loop
+            } else {
+              plugcount = plugcount + 1; // if the opposing plug does return the current letter then it is a valid connection and should be added to the tally of valid connections
+              break; //break the loop
+            }
+          }
+        }
+      }
+
+      if (plugW.value !== "") {
+        plugmatch = "plug" + plugW.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "W") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugE.value !== "") {
+        plugmatch = "plug" + plugE.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "E") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugR.value !== "") {
+        plugmatch = "plug" + plugR.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "R") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugT.value !== "") {
+        plugmatch = "plug" + plugT.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "T") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugZ.value !== "") {
+        plugmatch = "plug" + plugZ.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "Z") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugU.value !== "") {
+        plugmatch = "plug" + plugU.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "U") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugI.value !== "") {
+        plugmatch = "plug" + plugI.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "I") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugO.value !== "") {
+        plugmatch = "plug" + plugO.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "O") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugA.value !== "") {
+        plugmatch = "plug" + plugA.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "A") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugS.value !== "") {
+        plugmatch = "plug" + plugS.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "S") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugD.value !== "") {
+        plugmatch = "plug" + plugD.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "D") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugF.value !== "") {
+        plugmatch = "plug" + plugF.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "F") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugG.value !== "") {
+        plugmatch = "plug" + plugG.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "G") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugH.value !== "") {
+        plugmatch = "plug" + plugH.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "H") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugJ.value !== "") {
+        plugmatch = "plug" + plugJ.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "J") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugK.value !== "") {
+        plugmatch = "plug" + plugK.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "K") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugP.value !== "") {
+        plugmatch = "plug" + plugP.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "P") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugY.value !== "") {
+        plugmatch = "plug" + plugY.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "Y") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugX.value !== "") {
+        plugmatch = "plug" + plugX.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "X") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugC.value !== "") {
+        plugmatch = "plug" + plugC.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "C") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugV.value !== "") {
+        plugmatch = "plug" + plugV.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "V") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugB.value !== "") {
+        plugmatch = "plug" + plugB.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "B") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugN.value !== "") {
+        plugmatch = "plug" + plugN.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "N") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugM.value !== "") {
+        plugmatch = "plug" + plugM.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "M") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugL.value !== "") {
+        plugmatch = "plug" + plugL.value;
+        for (i = 0; i < 26; i++) {
+          var x = document.getElementsByName('Plug')[i];
+          if (x.id === plugmatch) {
+            if (x.value !== "L") {
+              plugerror = true;
+              break;
+            } else {
+              plugcount = plugcount + 1;
+              break;
+            }
+          }
+        }
+      }
+
+      if (plugerror == false) { // if the plugs return no errors then all the plug combinations are valid
+        return true; //Return valid configurations
+      } else {
+        return false; // if the plugs returned an error return an error
+      }
+    }
+
+    // FINISH PLUGBOARD
+    // START ENIGMA
+
+    function Enigma(letter) {
+
+      if (PlugTest() == true) { //if the above method (plugboard) returned no errors then the enigma can encrypt a letter
+        for (i = 0; i < R2.value; i++) { //for each value in the Rotor, shift the array to new positions
+          Startpoint0 = Dial2[25]; // set the value of Startpoint to the last letter in the rotor array
+          Dial2.pop(); // remove the last letter of the array
+          Dial2.unshift(Startpoint0); // add the last letter of the array back at the front of the array
+        }
+
+        for (i = 0; i < R3.value; i++) { //for each value in the Rotor, shift the array to new positions
+          Startpoint23 = Dial3[25]; // set the value of Startpoint to the last letter in the rotor array
+          Dial3.pop(); // remove the last letter of the array
+          Dial3.unshift(Startpoint23); // add the last letter of the array back at the front of the array
+        }
+
+
+        orignalLetter = letter;
+
+        shiftring1 = ring1.value - 1; //set ring shifts to the ring value -1(default is 1 and I do not want to shift an addtional letter)
+        shiftring2 = ring2.value - 1; //set ring shifts to the ring value -1(default is 1 and I do not want to shift an addtional letter)
+        shiftring3 = ring3.value - 1; //set ring shifts to the ring value -1(default is 1 and I do not want to shift an addtional letter)
+
+        for (i = 0; i < shiftring1; i++) { //for each value in the shift, shift the array to new positions
+          Startpointring1 = Dial1[25]; // set the value of Startpointring1 to the last letter in the rotor array
+          Dial1.pop(); // remove the last letter of the array
+          Dial1.unshift(Startpointring1); // add the last letter of the array back at the front of the array
+        }
+
+        for (i = 0; i < shiftring2; i++) { //for each value in the shift, shift the array to new positions
+          Startpointring2 = Dial2[25]; // set the value of Startpointring1 to the last letter in the rotor array
+          Dial2.pop(); // remove the last letter of the array
+          Dial2.unshift(Startpointring2); // add the last letter of the array back at the front of the array
+        }
+
+        for (i = 0; i < shiftring3; i++) { //for each value in the shift, shift the array to new positions
+          Startpointring3 = Dial3[25]; // set the value of Startpointring1 to the last letter in the rotor array
+          Dial3.pop(); // remove the last letter of the array
+          Dial3.unshift(Startpointring3); // add the last letter of the array back at the front of the array
+        }
+
+        // The below code swaps the letter to a connected plug if one is connected
+        plugfind = "plug" + letter; // Find the unique ID of the current letters plug
+        for (i = 0; i < 26; i++) { //loop round the alphabet
+          var x = document.getElementsByName('Plug')[i]; // loop round all the plugs
+          if (x.id == plugfind) { // if the plug matches the Unique ID of the letter set above then the plug is found
+            if (x.value !== "") { //if the plug is set change the letter to the value of the plug
+              //(This is possible as all plugs are valid before entering the enigma method ensuring all combinations dont have to be checked against their counterpart plug)
+              letter = x.value; //swap the letter
+              break; //break the loop
+            }
+          }
+        }
+
+        Newvalue = R1.value++; //increase the first rotors value on every call of the function
+
+        for (i = 0; i < R1.value; i++) { //for each value in the Rotor, shift the array to new positions
+          Startpoint = Dial3[25]; // set the value of Startpoint to the last letter in the rotor array
+          Dial3.pop(); // remove the last letter of the array
+          Dial3.unshift(Startpoint); // add the last letter of the array back at the front of the array
+        }
+
+        incremental = false; //set a bool value to be false (used to ensure correct incrementation between Rotors)
+
+        if (R1.value <= 27) { // if the value of Rotor 1 is less than 27 (26 displayed on rotor)
+          if (R1.value == 27) { // if the value of rotor 1 is 27 (26 displayed on rotor)
+            R1.value = 1; //reset the value of rotor 1 to 1
+          }
+          if (R1.value == 26) { // this is the set kickpoint of the rotor, if you add a rotor that has addittional kickpoints add an additional "OR" check here to allow the rotor to kick the next rotor
+            R2.value++; //increment the next rotor
+            for (i = 0; i < R2.value; i++) { //for each value in the Rotor, shift the array to new positions
+              Startpoint2 = Dial2[25]; // set the value of Startpoint to the last letter in the rotor array
+              Dial2.pop(); // remove the last letter of the array
+              Dial2.unshift(Startpoint2); // add the last letter of the array back at the front of the array
+            }
+            incremental = true; // set incremental to be true
+          }
+        }
+
+        if (R2.value <= 27) { // if the value of Rotor 2 is less than 27 (26 displayed on rotor)
+          if (R2.value == 27) { // if the value of rotor 2 is 27 (26 displayed on rotor)
+            R2.value = 1; //reset the value of rotor 1 to 1
+          }
+          if (R2.value == 26 && incremental == true) { // this is the set kickpoint of the rotor, if you add a rotor that has addittional kickpoints add an additional "OR" check here to allow the rotor to kick the next rotor
+            R3.value++; //increment the next rotor
+
+            for (i = 0; i < R3.value; i++) { //for each value in the Rotor, shift the array to new positions
+              Startpoint3 = Dial1[25]; // set the value of Startpoint to the last letter in the rotor array
+              Dial1.pop(); // remove the last letter of the array
+              Dial1.unshift(Startpoint3); // add the last letter of the array back at the front of the array
+            }
+            incremental = false; // set incremental to be False
+          }
+        }
+        if (R3.value >= 27) { // if the value of rotor 3 is 27 (26 displayed on rotor)
+          R3.value = 1; //reset the value of rotor 1 to 1
+        }
+
+        //ENIGMA LETTER SWAPPING
+        BasePos = Dial3.indexOf(letter); // find the base position of the letter in the dail
+        letter = Orignal[BasePos]; //swap it with the letter in the orignal alphabet
+        BasePos = Dial2.indexOf(letter); // find the base position of the letter in the dail
+        letter = Orignal[BasePos]; //swap it with the letter in the orignal alphabet
+        BasePos = Dial1.indexOf(letter); // find the base position of the letter in the dail
+        letter = Orignal[BasePos]; //swap it with the letter in the orignal alphabet
+        BasePos = ReflectorB.indexOf(letter); // find the base position of the letter in the reflector
+        letter = Orignal[BasePos]; //swap it with the letter in the orignal alphabet
+        BasePos = Orignal.indexOf(letter); // find the base position of the letter in the original alphabet
+        letter = Dial1[BasePos]; //swap it with the letter in the Dial
+        BasePos = Orignal.indexOf(letter); // find the base position of the letter in the original alphabet
+        letter = Dial2[BasePos]; //swap it with the letter in the Dial
+        BasePos = Orignal.indexOf(letter); // find the base position of the letter in the original alphabet
+        letter = Dial3[BasePos]; //swap it with the letter in the Dial
+
+        plugfind2 = "plug" + letter; // Find the unique ID of the current letters plug
+        for (i = 0; i < 26; i++) { //loop round the alphabet
+          var x2 = document.getElementsByName('Plug')[i]; // loop round all the plugs
+          if (x2.id == plugfind2) { // if the plug matches the Unique ID of the letter set above then the plug is found
+            if (x2.value !== "") { //if the plug is set change the letter to the value of the plug
+              //(This is possible as all plugs are valid before entering the enigma method ensuring all combinations dont have to be checked against their counterpart plug)
+              letter = x2.value; //swap the value
+              break; //break the loop
+            }
+          }
+        }
+
+        switchfind = "Switch" + orignalLetter; // find the unique switch ID based on the letter
+        for (i = 0; i < 26; i++) { //for each letter in the alphabet
+          var sw = document.getElementsByName('Switch')[i]; //iterate around all thew switches
+          if (sw.id == switchfind) { //if the switch ID is the same as the unique id delacred above the the following
+            if (sw.value == 1) { // if the value is true
+              sw.value = 0;
+              return orignalLetter; //return the original letter
+              break; //break out the loop
+            } else { //if switch is false return the encrypted letter
+              sw.value = 1;
+              return letter;
+            }
+          }
+        }
+
+
+
+
+      } else { // if the Above method (Pluboard) Returned an error print error
+        return "PlugBoard Error: Please check all connections and ensure you only have 10 pairs connected";
+      }
+    }
+  </script>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

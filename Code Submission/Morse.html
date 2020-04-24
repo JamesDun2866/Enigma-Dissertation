@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dissertation: Enigma</title> <!-- Website Title  -->
+  <link rel="stylesheet" href="css/main.css"><!-- CSS Link  -->
+  <script type="text/javascript" src="morsecode.js"></script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header id="main-header">
+    <div class="row">
+      <nav id="nav-wrap">
+        <ul id="nav" class="nav">
+          <li><a href="index.html">Enigma 1.</a></li><!-- Enigma  -->
+          <li><a href="fourdial.html">Enigma M3 Kriegsmarine.</a></li><!-- M3 Enigma  -->
+          <li><a href="ImprovedEnigma.html">Improved Enigma.</a></li> <!-- Improved Enigma  -->
+          <li><a href="Cribbing.html">Cribbing (Bombe Basics).</a></li><!-- Cribbing -->
+          <li><a href="Morse Code.html">Morse Code.</a></li><!-- Morse Code -->
+          <li><a href="hashing.html">Hashing.</a></li><!-- Hashing  -->
+          <li><a href="AES.html">AES 256.</a></li><!-- AES 256  -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="services">
+
+    <form oninput="Encoded.value=Encode(a.value)">
+      <!-- On imput perform the Encode function found below on the input of textarea a -->
+      <label class="label3">Morse Encode Input</label>
+      <textarea type="string" id="a" name="a"></textarea> <!-- text area a  -->
+      </br>
+      </br>
+      <label class="label3">Morse Encode Output</label>
+      <textarea readonly id="Encoded" name="Encoded" for="a"></textarea> <!-- Display the results of the Morse text from textarea a  -->
+    </form>
+    <br>
+    <br>
+    <form oninput="Decoded.value=Decode(b.value)">
+      <!-- On imput perform the Decode function found below on the input of textarea a -->
+      <label class="label3">Morse Decode Input</label>
+      <textarea type="string" id="b" name="b"></textarea> <!-- text area a  -->
+      </br>
+      </br>
+      <label class="label3">Morse Decode Output</label>
+      <textarea readonly id="Decoded" name="Decoded" for="a"></textarea> <!-- Display the results of the Decode text from textarea a  -->
+    </form>
+    <div class="Center">
+      <button type="button" onclick="reset()" class="button2">Reset</button>
+    </div>
+    <script>
+      function reset() {
+        location.reload();
+      }
+    </script>
+
+
+    <script>
+      // Use MorseCode.JS Libray to encode and Decode MorseCode. Libary essentailly does a lookup of the letters then converts them to Morse.
+      //https://github.com/Syncthetic/MorseCode
+
+      function Encode(f) {
+        morseEncode = Object.create(MorseCode); //Create the object
+        message = morseEncode.encode(f); //encode the message
+        return message; //return the message
+      }
+
+      function Decode(f) {
+        morseEncode = Object.create(MorseCode); //create the object
+        dcode = morseEncode.morse(f, true); //decode the message
+        return dcode; //return the message
+      }
+    </script>
+
+  </section>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

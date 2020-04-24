@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dissertation: Enigma</title> <!-- Website Title  -->
+  <link rel="stylesheet" href="css/main.css"><!-- CSS Link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> <!-- Crypto JS AES library  -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header id="main-header">
+    <div class="row">
+      <nav id="nav-wrap">
+        <ul id="nav" class="nav">
+          <li><a href="index.html">Enigma 1.</a></li><!-- Enigma  -->
+          <li><a href="fourdial.html">Enigma M3 Kriegsmarine.</a></li><!-- M3 Enigma  -->
+          <li><a href="ImprovedEnigma.html">Improved Enigma.</a></li> <!-- Improved Enigma  -->
+          <li><a href="Cribbing.html">Cribbing (Bombe Basics).</a></li><!-- Cribbing -->
+          <li><a href="Morse.html">Morse Code.</a></li><!-- Morse Code -->
+          <li><a href="hashing.html">Hashing.</a></li><!-- Hashing  -->
+          <li><a href="AES.html">AES 256.</a></li><!-- AES 256  -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="services">
+    <label class="label3">Plaintext:</label>
+    <br>
+    <textarea id='text' type='text'></textarea> <!-- plaintext input  -->
+    <br>
+    <label class="label3">Password:</label>
+    <br>
+    <textarea id='pass' type='text' value='cool'></textarea> <!-- Password Input  -->
+    <div class="Center">
+      <br>
+      <br>
+      <button class="button2" onclick="encrypt()">Encrypt</button> <!-- Encrypt button on click calls encrypt function found below  -->
+    </div>
+    <label class="label3" id="result"> Result:</label> <!-- Result label: Where result is displayed  -->
+    <br>
+
+    <div class="Center">
+      <button class="button2" onclick="decrypt()">Decrypt</button><!-- Decrypt button on click calls decrypt function found below  -->
+    </div>
+    <label class="label3" id="decrypted"> Result:</label><!-- Result label: Where result is displayed  -->
+    <br>
+
+
+    <div class="Center">
+      <button type="button" onclick="reset()" class="button2">Reset</button>
+    </div>
+    <script>
+      function reset() {
+        location.reload();
+      }
+    </script>
+  </section>
+
+  <script>
+    //AES 256 implmented using CryptoJS
+    //https://cryptojs.gitbook.io/docs/
+
+    function encrypt() {
+      var encrypted = CryptoJS.AES.encrypt(document.getElementById("text").value, document.getElementById("pass").value); //encrypts using the value of the plaintext and the password
+      document.getElementById("result").innerHTML = encrypted; //sets value of label to the encrypted string
+    }
+
+    function decrypt() {
+      var decrypted = CryptoJS.AES.decrypt(document.getElementById("result").innerHTML, document.getElementById("pass").value).toString(CryptoJS.enc.Utf8); //Decrypts using the value of the result and the password
+      document.getElementById("decrypted").innerHTML = decrypted; //sets value of label to the Decrypted string
+    }
+  </script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
